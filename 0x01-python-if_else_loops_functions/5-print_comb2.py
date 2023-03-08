@@ -6,5 +6,5 @@ while number <= 99:
         print("{:d}{:d}, ".format(zero, number)
               if number < 10 else "{}, ".format(number), end="")
     else:
-        print("{:d} ".format(number))
+        print("{:d}\n".format(number))
     number += 1

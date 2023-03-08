@@ -6,6 +6,6 @@ while number1 < 10:
         if number1 != 8:
             print("{}{}, ".format(number1, number2), end="")
         else:
-            print("{}{} ".format(number1, number2))
+            print("{}{}\n".format(number1, number2))
         number2 += 1
     number1 += 1
