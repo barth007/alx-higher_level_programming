@@ -6,7 +6,7 @@ uppercase - function prints a string in uppercase
 
 
 def uppercase(str):
-    msg =""
+    msg =''
     for strs in str:
         if ord(strs) >= 97 and ord(strs) <= 122:
             strs = chr(ord(strs) - 32)
