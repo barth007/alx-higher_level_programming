@@ -2,8 +2,9 @@
 number = 0
 while number <= 99:
     if number < 10:
-        print("0{}, ".format(number), end="")
+        zero = 0
+        print("{:d}{:d}, ".format(zero, number), end="")
     elif number != 100 and number >= 10:
-        print("{}, ".format(number)
+        print("{:d}, ".format(number)
               if number != 99 else "{} ".format(number), end="")
     number += 1
