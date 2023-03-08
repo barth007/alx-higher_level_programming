@@ -2,5 +2,5 @@
 number = 0
 while number <= 98:
     hexidecimal = hex(number)
-    print(f"{number:d} = {hexidecimal}")
+    print("{} = {}".format(number, hexidecimal))
     number += 1
