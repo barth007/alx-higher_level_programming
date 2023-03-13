@@ -2,15 +2,11 @@
 
 if __name__ == "__main__":
     import sys
-    arg_number = len(sys.argv)
-    only_arg = arg_number - 1
-    if arg_number == 1:
-        print("{} arguments.".format(only_arg))
-    elif arg_number == 2:
-        print("{} argument: " .format(only_arg))
-        for i in range(1, arg_number):
-            print("{}: {}".format(i, sys.argv[i]))
+    arg_number = len(sys.argv) - 1
+    if arg_number == 0:
+        print("{} arguments.".format(arg_number))
     else:
-        print("{} arguments: ".format(only_arg))
-        for i in range(1, arg_number):
-            print("{}: {}".format(i, sys.argv[i]))
+        print("{} argument{}".format(arg_number,
+              's'if arg_number != 1 else ' '))
+        for i, arg in enumerate(sys.argv[1:], start=1):
+            print("{}: {}".format(i, arg))
