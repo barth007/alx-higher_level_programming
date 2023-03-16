@@ -2,10 +2,10 @@
 def uniq_add(my_list=[]):
     """
     computes all unique integers in a list
-    
+
     Args:
     my_list(list): this is a lisst
-    
+
     Return:
     new_list[]
     """
