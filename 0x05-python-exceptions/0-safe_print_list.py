@@ -1,13 +1,13 @@
 #!/usr/bin/python3
+"""
 def _len(my_list=[]):
-    """
-        _len - returns of a list
-        @my_list: the list argument
-    """
+        #_len - returns of a list
+        #@my_list: the list argument
     a = 0
     for i in my_list:
         a = a + 1
     return (a)
+"""
 
 
 def safe_print_list(my_list=[], x=0):
@@ -16,6 +16,22 @@ def safe_print_list(my_list=[], x=0):
         @my_list: a list that can contain any type of data type
         @x: this is the number of element to prints
     """
+    count = 0
+    for i in range(x):
+        try:
+            print(my_list[i], end="")
+            count += 1
+        except IndexError:
+            break
+    print("")
+    return count
+
+
+"""
+def safe_print_list(my_list=[], x=0):
+        #safe_print_list - a function that prints x elements of a list.
+        #@my_list: a list that can contain any type of data type
+        #@x: this is the number of element to prints
     a = 0
     try:
         [print("{}".format(my_list[i]), end='') for i in range(x)]
@@ -24,3 +40,4 @@ def safe_print_list(my_list=[], x=0):
     except IndexError:
         print("\n")
         return (_len(my_list))
+"""
