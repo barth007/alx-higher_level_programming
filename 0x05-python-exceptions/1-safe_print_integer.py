@@ -5,7 +5,7 @@ def safe_print_integer(value):
     @value: can be any thing a string or integer
     """
     try:
-        print("{:d}".format(value))
+        print("{:d}".format(int(value)))
         return (True)
     except ValueError:
         return (False)
