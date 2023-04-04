@@ -18,8 +18,8 @@ class Rectangle:
                width(int): private field of the rectangle width
                height(int):private field of the rectangle height
         """
-        self.__width = width
         self.__height = height
+        self.__width = width
 
     @property
     def width(self):
@@ -31,24 +31,6 @@ class Rectangle:
                the set width
         """
         return (self.__width)
-
-    @width.setter
-    def width(self, value):
-        """Setter method for width
-
-           Args:
-               value(int): The value that will be assign to width
-           Return:
-               The set width = value
-           Raise:
-               TypeError and ValueError
-        """
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= ")
-        else:
-            self.__width = value
 
     @property
     def height(self):
@@ -78,3 +60,21 @@ class Rectangle:
             raise ValueError("height must be >=0")
         else:
             self.__height = value
+
+    @width.setter
+    def width(self, value):
+        """Setter method for width
+
+           Args:
+               value(int): The value that will be assign to width
+           Return:
+               The set width = value
+           Raise:
+               TypeError and ValueError
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        elif value < 0:
+            raise ValueError("width must be >= ")
+        else:
+            self.__width = value
