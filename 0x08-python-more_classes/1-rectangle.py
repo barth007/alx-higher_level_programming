@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 1-rectangle.py
-""" Represent a Square """
+""" Define a Rectangle """
 
 
 class Rectangle:
