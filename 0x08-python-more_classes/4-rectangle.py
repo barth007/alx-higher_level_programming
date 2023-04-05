@@ -123,3 +123,11 @@ class Rectangle:
                 if i < self.__height:
                     result += "\n"
         return (result)
+
+    def __repr__(self):
+        """A string representation of the retangle
+
+           Return:
+               representation of the rectangle
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)

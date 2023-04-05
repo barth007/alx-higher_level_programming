@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 4-rectangle.py
+# 2-rectangle.py
 """ Define a Rectangle """
 
 
@@ -106,20 +106,4 @@ class Rectangle:
             result = 0
         else:
             result = 2 * int((self.__width + self.__height))
-        return (result)
-
-    def __str__(self):
-        """print out a character
-
-           Return:
-               character #
-        """
-        result = ""
-        if self.__width == 0 or self.__height == 0:
-            result
-        else:
-            for i in range(self.__height):
-                result += "#" * self.__width
-                if i < self.__height:
-                    result += "\n"
         return (result)
