@@ -78,3 +78,32 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
+
+    def area(self):
+        """computed area of a rectangle
+
+           Args:
+               __width(int): the shortest distance of the rectangle
+               __height(int): The longest disance of the rectangle
+           Return:
+               computed area of the rectangle
+        """
+        return (self.__height * self.__width)
+
+    def perimeter(self):
+        """computed perimeter of a rectangle
+
+           Args:
+               __width(int): the shortest disance
+               __height(int): the longest distance
+           Return:
+               computed perimeter
+           Checks:
+               if any of the field value are zero
+        """
+        result = 0
+        if self.__width == 0 or self.__height == 0:
+            result = 0
+        else:
+            result = 2 * int((self.__width + self.__height))
+        return (result)
