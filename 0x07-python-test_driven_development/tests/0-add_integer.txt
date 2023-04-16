@@ -76,3 +76,28 @@ case #12: infinity float with the second variable
 Traceback (most recent call last):
 ...
 OverflowError: cannot convert float infinity to integer
+
+case #13: negative infinity float for first variable
+>>> add_integer(-float("inf"), 1)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+case #14: negative infinity float for second variable
+>>> add_integer(1, -float("inf"))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+case #15: test first variable with a list
+>>> add_integer([1, 2, 3], 1)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+case #16: test second variable with a list
+>>> add_integer(1, [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
