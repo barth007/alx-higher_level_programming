@@ -109,3 +109,14 @@ case #17: Test first variable with a booolean
 case #18:Test second variable with a boolean
 >>> add_integer(2, False)
 2
+
+case #19: Test first variable with anonymous function
+>>> add_integer(lambda x:x, 2.5)
+Traceback (most recent call last)
+...
+TypeError: a must be an integer
+
+case #20: Test second variable with anoymous function
+>>> add_integer(2.3, lamda x:x)
+...
+TypeError: b must be an integer
