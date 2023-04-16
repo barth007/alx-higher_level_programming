@@ -1,0 +1,22 @@
+Test cases for '3-say_my_name.py'
+================================
+
+print my first_name and last_name with the 'say_my_name'
+-------------------------------------------------------
+
+import 'say_my_name'
+>>> say_my_name=__import__('3-say_my_name').say_my_name
+
+cases to be tested with
+
+case #1: Test first_name variable with non-string
+>>> say_my_name(89, "Bassey")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+case #2: Test last_name variable with non-string
+>>> say_my_name("Bassey", 89)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string

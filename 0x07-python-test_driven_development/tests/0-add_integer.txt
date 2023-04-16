@@ -1,0 +1,67 @@
+tests cases for '0-add_integer.py'
+=================================
+
+adds two integers, with the function 'add_integer'
+-------------------------------------------------
+
+Import 'add_integer'
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Cases to be evaluted:
+
+case #1: Test with zero argument
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+case #2: Test None variable to 'a'
+>>> add_integer(None, 8)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+case #3: Test None variable to 'b'
+>>> add_integer(9, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+case #4: Test None with both variable
+>>> add_integer(None, None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+case #5: Test computing more than 3 variable
+>>> add_integer(7, 8, 9)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+case #6: Test 'a' as a string (int(b))
+>>> add_integer("Alx_SE", 89)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+case #7: Test 'b' as a string (int(b))
+>>> add_integer(89, "Alx_SE")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+case #8: Test but 'a' and 'b' as strings
+>>> add_integer("Alx_SE", "Alx_Africa")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+case #9: Test with integer
+>>> add_integer(4, -4)
+0
+
+case #10: Test with float variables
+>>> add_integer(20.3, 0.7)
+20
+
