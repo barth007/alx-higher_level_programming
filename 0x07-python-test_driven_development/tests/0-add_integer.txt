@@ -65,3 +65,14 @@ case #10: Test with float variables
 >>> add_integer(20.3, 0.7)
 20
 
+case #11: infinity float with the first variable
+>>> add_integer(float("inf"), 1)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+case #12: infinity float with the second variable
+>>> add_integer(1, float("inf"))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
