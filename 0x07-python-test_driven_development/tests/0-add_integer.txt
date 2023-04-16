@@ -101,3 +101,11 @@ case #16: test second variable with a list
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer
+
+case #17: Test first variable with a booolean
+>>> add_integer(True, 2)
+3
+
+case #18:Test second variable with a boolean
+>>> add_integer(2, False)
+2
