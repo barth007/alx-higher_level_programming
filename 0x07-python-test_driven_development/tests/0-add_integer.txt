@@ -121,3 +121,11 @@ case #20: Test second variable with anonymous function
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer
+
+case #21: Test first variable with negative float
+>>> add_integer(-2.9, 10)
+8
+
+case #22: Test second variable with negative integer
+>>> add_integer(2.9, -10)
+-8
