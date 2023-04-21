@@ -20,7 +20,3 @@ class TestBase(unittest.TestCase):
             """ test if it's a package"""
             self.assertEqual(models.__name__, 'models')
             self.assertInstance(models, type(__builtins__))
-
-
-if __name__ == "__main__":
-    unittest.main()
