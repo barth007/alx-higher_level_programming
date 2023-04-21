@@ -18,6 +18,17 @@ class TestBase(unittest.TestCase):
             b2 = Base()
             self.assertIsInstance(b2, Base)
 
+        def test_number(self):
+            """check that __nb_objects is incremened"""
+            b3 = Base()
+            self.assertEqual(b3.id, 1)
+
+            b4 = Base()
+            self.assertEqual(b4.id, 2)
+
+            b5 = Base()
+            self.assertEqual(b5.id, 3)
+
 
 if __name__ == "__main__":
     unittest.main()
