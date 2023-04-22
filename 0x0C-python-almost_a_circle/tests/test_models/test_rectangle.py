@@ -7,30 +7,33 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     """class TestRectangle"""
-    def test_id(self):
-        """check id"""
-        Base._Base__nb_objects = 0
-        r1 = Rectangle(10, 2)
-        self.assertIsNotNone(id(r1))
+    def test_constructor(self):
+        """testing constructor"""
+        r1 = Rectangle(10, 20)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 20)
+        self.assertEqual(r1.x, 0)
+        self.assertEqual(r1.y, 0)
+        self.assertIsNotNone(r1.id)
+        r2 = Rectangle(30, 50, 74, 40, 80)
+        self.assertEqual(r2.width, 30)
+        self.assertEqual(r2.height, 50)
+        self.assertEqual(r2.x, 74)
+        self.assertEqual(r2.y, 40)
+        self.assertEqual(r2.id, 80)
 
-    def test_init(self):
-        """check proper instances created"""
-        Base._Base__nb_objects = 0
-        r2 = Rectangle(2, 10)
-        self.assertIsInstance(r2, Rectangle)
+    def test_getters_setters(self):
+        """test getter and setter method"""
+        r = Rectangle(10, 30)
+        r.width = 30
+        self.assertEqual(r.width, 30)
+        r.height = 49
+        self.assertEqual(r.height, 49)
+        r.x = 60
+        self.assertEqual(r.x, 60)
+        r.y = 50
+        self.assertEqual(r.y, 50)
 
-    def test_numObj(self):
-        """check number of objects"""
-        Base._Base__nb_objects = 0
-        r3 = Rectangle(10, 2, 0, 0)
-        r4 = Rectangle(5, 5)
-        self.assertEqual(r4.id, 2)
 
-    def test_getterAndSetter(self):
-        """checks getter and setter"""
-        Base._Base__nb_objects = 0
-        r5 = Rectangle(10, 2, 0, 0)
-        self.assertEqual(r5.width, 10)
-        self.assertEqual(r5.height, 2)
-        self.assertEqual(r5.x, 0)
-        self.assertEqual(r5.y, 0)
+if __name__ == "__main__":
+    unittest.main()
