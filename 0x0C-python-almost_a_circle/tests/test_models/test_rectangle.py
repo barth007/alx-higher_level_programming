@@ -75,6 +75,12 @@ class TestRectangle(unittest.TestCase):
         output_contents = buffer_output.getvalue()
         self.assertEqual(output_contents, "###\n###\n###\n###\n###\n")
 
+    def test_str(self):
+        """Test for the str() method"""
+        r5 = Rectangle(4, 6, 2, 1, 12)
+        string = r5.__str__()
+        self.assertEqual(string, "[Rectangle] (12) 2/1 - 4/6")
+
 
 if __name__ == "__main__":
     unittest.main()

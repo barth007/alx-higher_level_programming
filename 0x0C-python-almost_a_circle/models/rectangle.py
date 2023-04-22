@@ -140,3 +140,13 @@ class Rectangle(Base):
         """ compute the area and print the character #"""
         for i in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """return a string
+
+           Return:
+               formatted string
+        """
+        return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            __class__.__name__, self.id, self.__x, self.__y,
+            self.__width, self.__height)
