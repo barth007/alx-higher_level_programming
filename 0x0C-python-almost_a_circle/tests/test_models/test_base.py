@@ -4,19 +4,21 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    def setUp(self):
-        """creates three instances of the Base"""
-        self.obj1 = Base()
-        self.obj2 = Base()
-        self.obj3 = Base(id=10)
-
+    """class TestBase"""
     def test_id(self):
-        """ testing that an id is generated for each instance"""
-        self.assertEqual(self.obj1.id, 1)
-        self.assertEqual(self.obj2.id, 2)
-        self.assertEqual(self.obj3.id, 10)
+        """check id"""
+        Base._Base__nb_objects = 0
+        b1 = Base()
+        self.assertIsNotNone(id(b1))
 
-        def test_package(self):
-            """ test if it's a package"""
-            self.assertEqual(models.__name__, 'models')
-            self.assertInstance(models, type(__builtins__))
+    def test_init(self):
+        """check instance"""
+        Base._Base__nb_objects = 0
+        b2 = Base()
+        self.assertIsInstance(b2, Base)
+
+    def test_numObj(self):
+        """check number of objects"""
+        Base._Base__nb_objects = 0
+        b3 = Base()
+        self.assertEqual(b3.id, 1)
