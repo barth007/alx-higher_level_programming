@@ -34,6 +34,26 @@ class TestRectangle(unittest.TestCase):
         r.y = 50
         self.assertEqual(r.y, 50)
 
+    def test_for_error(self):
+        """tests input to raise error messages"""
+        r = Rectangle(30, 70)
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            r.width = "20"
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r.width = -10
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r.height = "40"
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r.height = -50
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r.x = "20"
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            r.x = -20
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r.y = "30"
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            r.y = -30
+
 
 if __name__ == "__main__":
     unittest.main()
