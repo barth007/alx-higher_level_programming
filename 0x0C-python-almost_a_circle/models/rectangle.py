@@ -138,8 +138,13 @@ class Rectangle(Base):
 
     def display(self):
         """ compute the area and print the character #"""
+        for k in range(self.__y):
+            print()
         for i in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.__x, end="")
+            for j in range(self.__width):
+                print("#", end="")
+            print()
 
     def __str__(self):
         """return a string
@@ -150,3 +155,21 @@ class Rectangle(Base):
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             __class__.__name__, self.id, self.__x, self.__y,
             self.__width, self.__height)
+
+    def update(self, *args):
+        """ methods update the Rectangle
+
+            Args:
+                *args = tuples
+        """
+
+        if len(args) >= 1:
+            self.id = args[0]
+        if len(args) >= 2:
+            self.width = args[1]
+        if len(args) >= 3:
+            self.height = args[2]
+        if len(args) >= 4:
+            self.x = args[3]
+        if len(args) >= 5:
+            self.y = args[4]
