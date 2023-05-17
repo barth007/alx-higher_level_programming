@@ -5,7 +5,7 @@
 
 -- if the table firsttable already exists, the script fails.
 
-CREATE TABLE IF NOT EXISTS `first_name`(
-    `id` INT,
-    `name` VARCHAR(256)
+CREATE TABLE IF NOT EXISTS first_name(
+    id INT,
+    name VARCHAR(256)
     )
