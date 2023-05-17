@@ -2,9 +2,10 @@
 --  Attributes:
 -- id INT,
 -- name VARCHAR(256)
+
 -- if the table firsttable already exists, the script fails.
 
 CREATE TABLE IF NOT EXISTS `first_name`(
-    `id` int,
-    `name` varchar(256)
+    `id` INT,
+    `name` VARCHAR(256)
     )
