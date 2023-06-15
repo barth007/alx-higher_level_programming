@@ -1,8 +1,4 @@
 #!/usr/bin/node
-
-class Rectangle {
-  // empty class
-  constructor () {
-    // empy constructor
-  }
-}
+module.exports = {
+  Rectangle: function () {}
+};
