@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-# The script lists all states from the database hbtn_0e_0_usa and takes
-# Usage: ./0-select_states.py <mysql username> \
-#                             <mysql password> \
-#                             <database name>
+"""The script lists all states from the database hbtn_0e_0_usa and takes
+    Usage: ./0-select_states.py <mysql username> \
+                               <mysql password> \
+                               <database name>
+"""
 
 import sys
 import MySQLdb
@@ -22,8 +23,9 @@ if __name__ == '__main__':
             port=db_port
             )
     cursors = connection.cursor()
-    rows = cursors.execute("SELECT * FROM states ORDER BY states.id ASC")
-    for row in range(rows):
-        print(cursors.fetchone())
+    cursors.execute("SELECT * FROM states ORDER BY states.id ASC")
+    rows = cursors.fetchall()
+    for row in rows:
+        print(row)
     cursors.close()
     connection.close()
