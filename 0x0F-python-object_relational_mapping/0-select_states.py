@@ -10,23 +10,24 @@ import MySQLdb
       mysql password;
       database name;
 """
-db_user = sys.argv[1]
-db_password = sys.argv[2]
-data_base = sys.argv[3]
-db_host = "localhost"
-db_port = 3306
+if __name__ == '__main__':
+    db_user = sys.argv[1]
+    db_password = sys.argv[2]
+    data_base = sys.argv[3]
+    db_host = "localhost"
+    db_port = 3306
 
-connection = MySQLdb.connect(
-        host=db_host,
-        user=db_user,
-        password=db_password,
-        database=data_base,
-        port=db_port
-        )
-cursors = connection.cursor()
-cursors.execute("SELECT * FROM states ORDER BY id ASC")
-rows = cursors.fetchall()
-for row in rows:
-    print("{}".format(row))
-cursors.close()
-connection.close()
+    connection = MySQLdb.connect(
+            host=db_host,
+            user=db_user,
+            password=db_password,
+            database=data_base,
+            port=db_port
+            )
+    cursors = connection.cursor()
+    cursors.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cursors.fetchall()
+    for row in rows:
+        print("{}".format(row))
+    cursors.close()
+    connection.close()
