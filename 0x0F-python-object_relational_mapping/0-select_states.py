@@ -24,7 +24,9 @@ connection = MySQLdb.connect(
         port=db_port
         )
 cursors = connection.cursor()
-cursors.execute("SELECT * FROM states")
+cursors.execute("SELECT * FROM states WHERE id ORDER BY id ASC")
 rows = cursors.fetchall()
 for row in rows:
     print("{}".format(row))
+cursors.close()
+connection.close()
