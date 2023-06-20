@@ -22,9 +22,8 @@ if __name__ == '__main__':
             port=db_port
             )
     cursors = connection.cursor()
-    cursors.execute("SELECT * FROM states ORDER BY states.id ASC")
-    rows = cursors.fetchall()
-    for row in rows:
-        print("{}".format(row))
+    rows = cursors.execute("SELECT * FROM states ORDER BY states.id ASC")
+    for row in range(rows):
+        print(cursors.fetchone())
     cursors.close()
     connection.close()
