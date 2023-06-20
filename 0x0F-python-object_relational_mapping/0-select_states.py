@@ -22,7 +22,7 @@ if __name__ == '__main__':
             port=db_port
             )
     cursors = connection.cursor()
-    cursors.execute("SELECT * FROM states ORDER BY id ASC")
+    cursors.execute("SELECT * FROM states ORDER BY states.id ASC")
     rows = cursors.fetchall()
     for row in rows:
         print("{}".format(row))
