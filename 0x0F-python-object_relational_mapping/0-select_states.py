@@ -23,7 +23,8 @@ def lists_states(db_user, db_password, data_base):
             user=db_user,
             password=db_password,
             database=data_base,
-            port=db_port
+            port=db_port,
+            charset="utf8"
             )
     cursors = connection.cursor()
     cursors.execute("SELECT * FROM states ORDER BY states.id ASC")
