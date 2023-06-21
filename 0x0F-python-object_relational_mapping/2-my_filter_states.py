@@ -28,7 +28,8 @@ def match_states(db_user, db_password, data_base, state):
             charset="utf8"
             )
     cursors = connection.cursor()
-    cursors.execute("SELECT * FROM states WHERE name = %s ", (states, ))
+    query = "SELECT * FROM states WHERE name = '{}'"
+    cursors.execute(query.format(state))
     rows = cursors.fetchall()
     for row in rows:
         print(row)
