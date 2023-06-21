@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-"""
-python script that lists all states in the database
-hbtn_0e_0_usa and are sorted by id (state.id)
-"""
+
 from sys import argv
 import MySQLdb
 
 
-def lists_states(db_user, db_password, data_base):
+def match_states(db_user, db_password, data_base, state):
     """
         The script lists all states from the database hbtn_0e_0_usa and takes
         Usage: ./0-select_states.py <mysql username> \
@@ -17,6 +14,7 @@ def lists_states(db_user, db_password, data_base):
           db_user(database user)
           db_password(database password)
           data_base(database)
+          state
     """
     db_host = "localhost"
     db_port = 3306
@@ -30,7 +28,7 @@ def lists_states(db_user, db_password, data_base):
             charset="utf8"
             )
     cursors = connection.cursor()
-    cursors.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cursors.execute("SELECT * FROM states WHERE name = %s ", (states, ))
     rows = cursors.fetchall()
     for row in rows:
         print(row)
@@ -39,4 +37,5 @@ def lists_states(db_user, db_password, data_base):
 
 
 if __name__ == "__main__":
-    lists_states(argv[1], argv[2], argv[3])
+    db_user, db_password, data_base, states = argv[1:]
+    match_states(db_user, db_password, data_base, states)

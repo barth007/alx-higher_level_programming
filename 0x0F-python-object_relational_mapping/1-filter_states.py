@@ -4,7 +4,7 @@ from sys import argv
 import MySQLdb
 
 
-def lists_states(db_user, db_password, data_base):
+def filter_states(db_user, db_password, data_base):
     """
         The script lists all states from the database hbtn_0e_0_usa and takes
         Usage: ./0-select_states.py <mysql username> \
@@ -36,4 +36,4 @@ def lists_states(db_user, db_password, data_base):
 
 
 if __name__ == "__main__":
-    lists_states(argv[1], argv[2], argv[3])
+    filter_states(argv[1], argv[2], argv[3])
