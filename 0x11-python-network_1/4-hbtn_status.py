@@ -1,18 +1,16 @@
 #!/usr/bin/python3
-"""
-   This script fetches https://alx-intranet.hbtn.io/status
-"""
 import requests
 
 
 def fetch_resource(url):
-    try:
-        response = requests.get(url)
-        print("Body response:")
-        print("\t -type: {}".format(type(response.text)))
-        print("\t -content: {}".format(response.text))
-    except requests.exceptions.RequestException as e:
-        print("Error:", e)
+    """
+      This script fetches https://alx-intranet.hbtn.io/status
+    """
+    response = requests.get(url)
+    response.raise_for_status()
+    print("Body response:")
+    print("\t -type: {}".format(type(response.text)))
+    print("\t -content: {}".format(response.text))
 
 
 if __name__ == "__main__":
