@@ -4,8 +4,17 @@
 """
 import requests
 
+
+def fetch_resource(url):
+    try:
+        response = requests.get(url)
+        print("Body response:")
+        print("\t -type: {}".format(type(response.text)))
+        print("\t -content: {}".format(response.text))
+    except requests.exceptions.RequestException as e:
+        print("Error:", e)
+
+
 if __name__ == "__main__":
-    response = requests.get('https://alx-intranet.hbtn.io/status')
-    print("Body response:")
-    print("\t -type: {}".format(type(response.text)))
-    print("\t -content: {}".format(response.text))
+    url = 'https://alx-intranet.hbtn.io/status'
+    fetch_resource(url)
