@@ -9,9 +9,9 @@ import sys
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         letter = sys.agrv[1]
-        url = http://0.0.0.0:5000/search_user
+        url = 'http://0.0.0.0:5000/search_user'
         payload = {'q': letter}
-        response = requests,post(url, data=payload)
+        response = requests.post(url, data=payload)
         try:
             response.json()
             if data:
